@@ -1,7 +1,7 @@
 import connectedComponentsAndMST as ccmst
 
 
-listOfProbabilityOfArches = [0.2, 0.4, 0.6, 0.8, 1]
+listOfProbabilityOfArches = [0.2, 0.25, 0.30, 0.35, 0.4]
 numOfMatrices = 12
 timesOfCC = []
 timesOfMST = []
@@ -10,5 +10,5 @@ listsOfWeightsAndIndeces = ccmst.getListsOfWeightsAndIndecesfNonZeroValueSimmetr
 listsOfCC = ccmst.getListsofALLConnectedComponents(listsOfMatrices, listsOfWeightsAndIndeces, timesOfCC)
 listsOfAllMST_Kruskal = ccmst.getListsOfAllMST_Kruskal(listsOfMatrices, listsOfWeightsAndIndeces, listsOfCC, timesOfMST)
 
-risultatiCCandMST = 'risultatiCCandMST.txt'
+risultatiCCandMST = 'risultatiTXT/risultatiCCandMST.txt'
 ccmst.writeResult(listOfProbabilityOfArches, listsOfCC, timesOfCC, timesOfMST, risultatiCCandMST)

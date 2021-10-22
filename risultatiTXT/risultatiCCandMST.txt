@@ -1,0 +1,72 @@
+Tempi di esecuzione per la ricerca di componenti connesse e albero di copertura di costo minimo di un grafo non orientato. 
+
+Tempi per ricerca di CC e MST con probabilità di arco tra nodi del grafo = 0.2.
+Numero di Nodi nel grafo = 2, Numero di CC = 2, TempoCC = 0.000032, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 4, Numero di CC = 2, TempoCC = 0.000020, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 8, Numero di CC = 4, TempoCC = 0.000025, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 16, Numero di CC = 1, TempoCC = 0.000071, TempoMST = 0.000109.
+Numero di Nodi nel grafo = 32, Numero di CC = 1, TempoCC = 0.000204, TempoMST = 0.000257.
+Numero di Nodi nel grafo = 64, Numero di CC = 1, TempoCC = 0.000644, TempoMST = 0.000738.
+Numero di Nodi nel grafo = 128, Numero di CC = 1, TempoCC = 0.001754, TempoMST = 0.002473.
+Numero di Nodi nel grafo = 256, Numero di CC = 1, TempoCC = 0.007952, TempoMST = 0.009173.
+Numero di Nodi nel grafo = 512, Numero di CC = 1, TempoCC = 0.023194, TempoMST = 0.041028.
+Numero di Nodi nel grafo = 1024, Numero di CC = 1, TempoCC = 0.087542, TempoMST = 0.157545.
+Numero di Nodi nel grafo = 2048, Numero di CC = 1, TempoCC = 0.443166, TempoMST = 0.664140.
+Numero di Nodi nel grafo = 4096, Numero di CC = 1, TempoCC = 1.923583, TempoMST = 2.490792.
+
+Tempi per ricerca di CC e MST con probabilità di arco tra nodi del grafo = 0.25.
+Numero di Nodi nel grafo = 2, Numero di CC = 2, TempoCC = 0.000013, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 4, Numero di CC = 1, TempoCC = 0.000021, TempoMST = 0.000040.
+Numero di Nodi nel grafo = 8, Numero di CC = 2, TempoCC = 0.000034, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 16, Numero di CC = 2, TempoCC = 0.000078, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 32, Numero di CC = 1, TempoCC = 0.000232, TempoMST = 0.000249.
+Numero di Nodi nel grafo = 64, Numero di CC = 1, TempoCC = 0.000655, TempoMST = 0.000816.
+Numero di Nodi nel grafo = 128, Numero di CC = 1, TempoCC = 0.001941, TempoMST = 0.003509.
+Numero di Nodi nel grafo = 256, Numero di CC = 1, TempoCC = 0.006845, TempoMST = 0.010661.
+Numero di Nodi nel grafo = 512, Numero di CC = 1, TempoCC = 0.028337, TempoMST = 0.042319.
+Numero di Nodi nel grafo = 1024, Numero di CC = 1, TempoCC = 0.112143, TempoMST = 0.187089.
+Numero di Nodi nel grafo = 2048, Numero di CC = 1, TempoCC = 0.595042, TempoMST = 0.690654.
+Numero di Nodi nel grafo = 4096, Numero di CC = 1, TempoCC = 1.976386, TempoMST = 2.975223.
+
+Tempi per ricerca di CC e MST con probabilità di arco tra nodi del grafo = 0.3.
+Numero di Nodi nel grafo = 2, Numero di CC = 2, TempoCC = 0.000013, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 4, Numero di CC = 3, TempoCC = 0.000024, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 8, Numero di CC = 1, TempoCC = 0.000035, TempoMST = 0.000059.
+Numero di Nodi nel grafo = 16, Numero di CC = 1, TempoCC = 0.000085, TempoMST = 0.000095.
+Numero di Nodi nel grafo = 32, Numero di CC = 1, TempoCC = 0.000233, TempoMST = 0.000255.
+Numero di Nodi nel grafo = 64, Numero di CC = 1, TempoCC = 0.000641, TempoMST = 0.001483.
+Numero di Nodi nel grafo = 128, Numero di CC = 1, TempoCC = 0.002239, TempoMST = 0.003103.
+Numero di Nodi nel grafo = 256, Numero di CC = 1, TempoCC = 0.007800, TempoMST = 0.011272.
+Numero di Nodi nel grafo = 512, Numero di CC = 1, TempoCC = 0.035393, TempoMST = 0.056992.
+Numero di Nodi nel grafo = 1024, Numero di CC = 1, TempoCC = 0.150311, TempoMST = 0.213986.
+Numero di Nodi nel grafo = 2048, Numero di CC = 1, TempoCC = 0.488309, TempoMST = 0.807808.
+Numero di Nodi nel grafo = 4096, Numero di CC = 1, TempoCC = 1.980826, TempoMST = 3.307932.
+
+Tempi per ricerca di CC e MST con probabilità di arco tra nodi del grafo = 0.35.
+Numero di Nodi nel grafo = 2, Numero di CC = 1, TempoCC = 0.000018, TempoMST = 0.000026.
+Numero di Nodi nel grafo = 4, Numero di CC = 3, TempoCC = 0.000011, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 8, Numero di CC = 2, TempoCC = 0.000030, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 16, Numero di CC = 1, TempoCC = 0.000080, TempoMST = 0.000100.
+Numero di Nodi nel grafo = 32, Numero di CC = 1, TempoCC = 0.000224, TempoMST = 0.000278.
+Numero di Nodi nel grafo = 64, Numero di CC = 1, TempoCC = 0.000684, TempoMST = 0.000915.
+Numero di Nodi nel grafo = 128, Numero di CC = 1, TempoCC = 0.002839, TempoMST = 0.003838.
+Numero di Nodi nel grafo = 256, Numero di CC = 1, TempoCC = 0.011128, TempoMST = 0.015333.
+Numero di Nodi nel grafo = 512, Numero di CC = 1, TempoCC = 0.039890, TempoMST = 0.058413.
+Numero di Nodi nel grafo = 1024, Numero di CC = 1, TempoCC = 0.140812, TempoMST = 0.238940.
+Numero di Nodi nel grafo = 2048, Numero di CC = 1, TempoCC = 0.619148, TempoMST = 0.877076.
+Numero di Nodi nel grafo = 4096, Numero di CC = 1, TempoCC = 2.736677, TempoMST = 3.595718.
+
+Tempi per ricerca di CC e MST con probabilità di arco tra nodi del grafo = 0.4.
+Numero di Nodi nel grafo = 2, Numero di CC = 2, TempoCC = 0.000013, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 4, Numero di CC = 2, TempoCC = 0.000021, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 8, Numero di CC = 2, TempoCC = 0.000030, TempoMST = 0.000000.
+Numero di Nodi nel grafo = 16, Numero di CC = 1, TempoCC = 0.000089, TempoMST = 0.000135.
+Numero di Nodi nel grafo = 32, Numero di CC = 1, TempoCC = 0.000231, TempoMST = 0.000306.
+Numero di Nodi nel grafo = 64, Numero di CC = 1, TempoCC = 0.000703, TempoMST = 0.001688.
+Numero di Nodi nel grafo = 128, Numero di CC = 1, TempoCC = 0.002812, TempoMST = 0.003827.
+Numero di Nodi nel grafo = 256, Numero di CC = 1, TempoCC = 0.010463, TempoMST = 0.017924.
+Numero di Nodi nel grafo = 512, Numero di CC = 1, TempoCC = 0.049680, TempoMST = 0.061035.
+Numero di Nodi nel grafo = 1024, Numero di CC = 1, TempoCC = 0.158527, TempoMST = 0.252274.
+Numero di Nodi nel grafo = 2048, Numero di CC = 1, TempoCC = 0.606539, TempoMST = 1.071974.
+Numero di Nodi nel grafo = 4096, Numero di CC = 1, TempoCC = 2.514810, TempoMST = 3.863721.
+

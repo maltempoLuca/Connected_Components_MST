@@ -1,6 +1,6 @@
 import numpy as np
 import random
-import time
+import timeit as time
 import unionFind
 import matplotlib.pyplot as plt
 
@@ -53,7 +53,7 @@ def getListsOfWeightsAndIndecesfNonZeroValueSimmetricalMatrices(listsOfMatrices)
 
 
 def getConnectedComponentsSET(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime):
-    startTime = time.time()
+    startTime = time.default_timer()
     # crea Nodi
     size = adjacencyMatrix.shape[0]
     SETDLL = set()
@@ -84,7 +84,7 @@ def getConnectedComponentsSET(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime)
 
                 # stampa nUnion e nCC
     nCC = len(SETDLL)
-    endTime = time.time()
+    endTime = time.default_timer()
     tmpTime.append(endTime - startTime)
     return (nCC, SETDLL)
 
@@ -112,7 +112,7 @@ def getListsofALLConnectedComponents(listsOfMatrices, listsOfWeightsAndIndeces, 
 
 
 def MST_Kruskal(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime):  # ritorna listOfIndeces di UNA CC
-    startTime = time.time()
+    startTime = time.default_timer()
     # lista di indici da ritornare
     newListOfWeightsAndIndeces = []
     # crea Nodi
@@ -157,7 +157,7 @@ def MST_Kruskal(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime):  # ritorna l
                     newListOfWeightsAndIndeces.append(tupla)
 
     # stampa tempi
-    endTime = time.time()
+    endTime = time.default_timer()
     tmpTime.append(endTime - startTime)
     return newListOfWeightsAndIndeces
 
@@ -191,7 +191,7 @@ def writeResult(listOfProbabilityOfArches, listsOfCC, timesOfCC, timesOfMST, fil
         File_object.write(str0)
         for j in range(len(listsOfCC[i])):
             str1 = 'Numero di Nodi nel grafo = ' + str(nNodi[j]) + ', Numero di CC = ' + str(listsOfCC[i][j][0]) + ', TempoCC = ' + str(
-                "{:.5f}".format(timesOfCC[i][j])) + ', TempoMST = ' + str("{:.5f}".format(timesOfMST[i][j])) + '.\n'
+                "{:.6f}".format(timesOfCC[i][j])) + ', TempoMST = ' + str("{:.6f}".format(timesOfMST[i][j])) + '.\n'
             File_object.write(str1)
         File_object.write('\n')
     File_object.close()
