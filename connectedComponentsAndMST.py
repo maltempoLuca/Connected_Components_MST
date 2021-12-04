@@ -1,6 +1,8 @@
 import numpy as np
 import random
 import timeit as time
+
+import DoublyLinkedList
 import unionFind
 import matplotlib.pyplot as plt
 
@@ -11,9 +13,9 @@ def getSimmetricalWeightedAdjacencyMatrix(size, probabilityOfArch):
         for j in range(0, i):
             randomTreshold = random.uniform(0, 1)
             if probabilityOfArch >= randomTreshold:
-                randomNumber = random.randint(1, 9)
-                tmpMatrix[i, j] = randomNumber
-                tmpMatrix[j, i] = randomNumber
+                randomWeight = random.randint(1, 9)
+                tmpMatrix[i, j] = randomWeight
+                tmpMatrix[j, i] = randomWeight  # costruisco matrice simmetrica perchè grafo non orientato.
     return tmpMatrix
 
 
@@ -29,12 +31,12 @@ def getListsOfSimmetricalWeightedAdjacencyMatrices(listOfProbabilityOfArches, nu
 
 
 def getWeightsAndIndecesOfNonZeroValueSimmetricalMatrix(matrix):
-    indiciMatrix = np.nonzero(matrix)
+    indiciMatrix = np.nonzero(matrix) # lista delle posizioni di valori != 0
     indiciAndPesi = []
     for i in range(len(indiciMatrix[0])):
         indiceRiga = indiciMatrix[0][i]
         indiceColonna = indiciMatrix[1][i]
-        if indiceRiga < indiceColonna:
+        if indiceRiga < indiceColonna:  # matrice simmetrica, tengo conto solo della triangolare superiore.
             peso = matrix[indiceRiga, indiceColonna]
             archi = [indiciMatrix[0][i], indiciMatrix[1][i]]
             tupla = [peso, archi]
@@ -56,10 +58,10 @@ def getConnectedComponentsSET(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime)
     startTime = time.default_timer()
     # crea Nodi
     size = adjacencyMatrix.shape[0]
-    SETDLL = set()
+    SETDLL = set()   # Insieme che contiene tutte le liste doppiamente linkate, DLL ==
     listOfNodes = []
     for i in range(size):
-        node = unionFind.Node(i)
+        node = DoublyLinkedList.Node(i)
         listOfNodes.append(node)
         unionFind.makeSet(SETDLL, node)
 
@@ -67,16 +69,13 @@ def getConnectedComponentsSET(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime)
     nUnion = 0
     lengthListOfWeightsAndIndeces = len(listOfWeightsAndIndeces)
     for i in range(lengthListOfWeightsAndIndeces):
-        testaLista1 = unionFind.findSet(listOfNodes[listOfWeightsAndIndeces[i][1][0]])
-        testaLista2 = unionFind.findSet(listOfNodes[listOfWeightsAndIndeces[i][1][1]])
-        if testaLista1 != testaLista2:
-            lista1 = unionFind.findListFromHead(SETDLL, testaLista1)
-            lista2 = unionFind.findListFromHead(SETDLL, testaLista2)
+        lista1 = unionFind.findSet(listOfNodes[listOfWeightsAndIndeces[i][1][0]])
+        lista2 = unionFind.findSet(listOfNodes[listOfWeightsAndIndeces[i][1][1]])
+        if lista1 != lista2:
             if lista1.getSize() > lista2.getSize():
                 unionFind.union(lista1, lista2)
                 nUnion = nUnion + 1
                 SETDLL.remove(lista2)
-
             else:
                 unionFind.union(lista2, lista1)
                 nUnion = nUnion + 1
@@ -120,13 +119,12 @@ def MST_Kruskal(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime):  # ritorna l
     SETDLL = set()
     listOfNodes = []
     for i in range(size):
-        node = unionFind.Node(i)
+        node = DoublyLinkedList.Node(i)
         listOfNodes.append(node)
         unionFind.makeSet(SETDLL, node)
 
-    # ordina Archi SENZA DEEP COPY
-    orderedListOfWeightsAndIndeces = listOfWeightsAndIndeces  # deepcopy(listOfWeightsAndIndeces)
-    orderedListOfWeightsAndIndeces.sort(key=lambda x: x[0])
+    orderedListOfWeightsAndIndeces = listOfWeightsAndIndeces
+    orderedListOfWeightsAndIndeces.sort(key=lambda x: x[0])   # ordino archi per peso non decrescente
 
     # trova MST
     nUnion = 0
@@ -134,27 +132,21 @@ def MST_Kruskal(adjacencyMatrix, listOfWeightsAndIndeces, tmpTime):  # ritorna l
         if nUnion < size:  # MASSIMO V-1 UNION
             indiceRiga = orderedListOfWeightsAndIndeces[i][1][0]
             indiceColonna = orderedListOfWeightsAndIndeces[i][1][1]
-            testaLista1 = unionFind.findSet(listOfNodes[indiceRiga])
-            testaLista2 = unionFind.findSet(listOfNodes[indiceColonna])
-            if testaLista1 != testaLista2:
-                lista1 = unionFind.findListFromHead(SETDLL, testaLista1)
-                lista2 = unionFind.findListFromHead(SETDLL, testaLista2)
+            lista1 = unionFind.findSet(listOfNodes[indiceRiga])
+            lista2 = unionFind.findSet(listOfNodes[indiceColonna])
+            if lista1 != lista2:
                 if lista1.getSize() > lista2.getSize():
                     unionFind.union(lista1, lista2)
-                    nUnion = nUnion + 1
                     SETDLL.remove(lista2)
-                    peso = adjacencyMatrix[indiceRiga, indiceColonna]
-                    archi = [indiceRiga, indiceColonna]
-                    tupla = [peso, archi]
-                    newListOfWeightsAndIndeces.append(tupla)
                 else:
                     unionFind.union(lista2, lista1)
-                    nUnion = nUnion + 1
                     SETDLL.remove(lista1)
-                    peso = adjacencyMatrix[indiceRiga, indiceColonna]
-                    archi = [indiceRiga, indiceColonna]
-                    tupla = [peso, archi]
-                    newListOfWeightsAndIndeces.append(tupla)
+
+                nUnion = nUnion + 1
+                peso = adjacencyMatrix[indiceRiga, indiceColonna]
+                archi = [indiceRiga, indiceColonna]
+                tupla = [peso, archi]
+                newListOfWeightsAndIndeces.append(tupla)
 
     # stampa tempi
     endTime = time.default_timer()
